@@ -63,6 +63,7 @@ a {
   width: 100%;
   /* height: 500px; */
   background: black;
+ 
 }
 .hero__text {
   width: 456px;
@@ -126,7 +127,7 @@ a {
 .hero__img img {
   width: 461px;
 }
-.card {
+.cardD {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,7 +166,7 @@ a {
   color: dodgerblue;
 }
 .card h3 {
-  font-size: 36px;
+  font-size: 18px;
 }
 .card__box {
   width: 100%;
@@ -175,95 +176,6 @@ a {
   flex-wrap: wrap;
   margin-top: 20px;
   gap: 50px;
-}
-.box__dirct {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 335px;
-  height: 440px;
-  /* border:1px solid red ; */
-  gap: 7px;
-  position: relative;
-}
-.box__img {
-  width: 334px;
-  height: 337px;
-  background: gainsboro;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  
-}
-.box__img:hover {
-  transform: scale(1.1);
-  .position__sell {
-    top: 5px;
-    right: 5px;
-  }
-  .position__hert {
-    top: 55px;
-    right: 5px;
-  }
-}
-
-
-.position__sell {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  right: -40px;
-  top: 100px;
-  cursor: pointer;
-  box-sizing: content-box;
-}
-
-.position__sell:active {
-transform: scale(0.9);
-
-}
-.position__hert {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  right: -40px;
-  top: 50px;
-  cursor: pointer;
- 
-}
-.position__hert:hover{
-  transform: scale(1);
-  /*  */
-}
-.box__title {
-  font-size: 27px;
-}
-.box__del {
-  color: gainsboro;
-  font-size: 16px;
-}
-.box__btn {
-  width: 196px;
-  height: 46px;
-  border: none;
-  border-radius: 15px;
-  background: dodgerblue;
-  color: white;
-}
-.box__btn:hover {
-  cursor: pointer;
-  transform: scaleY(1.2);
-}
-.clients {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 135px;
 }
 .clients__title {
   width: 100%;
@@ -394,4 +306,286 @@ transform: scale(0.9);
 .footer b {
   font-size: 18px;
   color: white;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.navbar {
+  width: 100%;
+  margin-inline: 1.5rem;
+  padding-block: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: darkgray;
+  padding: 10px;
+  border-radius: 15px;
+  animation: a 0.5s linear infinite alternate;
+  .loader:before {
+    content: "Loading...";
+  }
+  @keyframes a {
+    to {
+      opacity: -2;
+    }
+  }
+}
+
+.logo {
+  color: #0004;
+}
+
+
+
+
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: #0005;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 40px;
+}
+
+.navigation a::after {
+  content: "";
+  left: 0;
+  bottom: -6px;
+  transform: scaleX(0);
+  transform-origin: right;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transition: transform 0.5s;
+}
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navigation .buttonlogin {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 600;
+  margin-left: 40px;
+  transition: 0.5s;
+}
+
+.navigation .buttonlogin:hover {
+  background: #fff;
+  color: #162938;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  /* border: 1px solid red; */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  overflow: hidden;
+}
+
+.card {
+  margin-top: 30px;
+  width: 300px;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  background: #d41f1f80;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  gap: 20px;
+  overflow: hidden;
+}
+
+h3 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+}
+
+.creat {
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 30px;
+  animation: l1 1s linear infinite alternate;
+}
+.loader:before {
+  content: "Loading...";
+}
+@keyframes l1 {
+  to {
+    opacity: 0;
+  }
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 300px;
+}
+.skeleton,
+.wrapper {
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.skeleton__item {
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  border: 1px solid red;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+}
+
+.skeletton__images {
+  width: 100%;
+  height: 250px;
+  background: #ddd;
+  border-radius: 14px;
+}
+
+.skeleton__line {
+  width: 100%;
+  height: 30px;
+  background: #ddd;
+  margin-top: 14px;
+  border-radius: 6px;
+}
+
+.skeleton__line:nth-child(3) {
+  width: 80%;
+}
+
+.skeleton__line:nth-child(4) {
+  width: 60%;
+}
+
+.skelete__inme {
+  background: linear-gradient(90deg, #ddd, #f7f7f7, #ddd);
+  background-size: 200%;
+  animation: skeleton 1s linear 0s infinite;
+}
+
+@keyframes skeleton {
+  to {
+    background-position: 200%;
+  }
+}
+
+.desck {
+  font-size: 16px;
+  color: #0009;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+button {
+  padding: 5px 20px;
+  width: 50%;
+  margin: auto;
+  border-radius: 5px;
+  border: none;
+  background: blue;
+  color: #fff;
+}
+
+.semore {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(50, 50, 184);
+  padding: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.collection {
+  display: flex;
+  list-style: none;
+  overflow: auto;
+  padding: 10px 50px;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.itemm {
+  font-size: 16px;
+  color: #004;
+  font-family: cursive;
+}
+
+.item data {
+  white-space: nowrap;
+}
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meta img {
+  width: 50px;
+  height: 50px;
+}
+
+.creat {
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.icon {
+  display: flex;
+  text-align: end;
+}
+i {
+  width: 100%;
+  display: flex;
+}
+i:hover {
+  color: red;
 }
